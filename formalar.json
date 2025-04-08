@@ -4,118 +4,135 @@
     "kulup": "Altınordu",
     "sezon": "2016/17",
     "forma_turu": "Alternatif",
-    "oyuncu_foto": null
+    "oyuncu_foto": null,
+    "sezon_link": "https://tr.wikipedia.org/wiki/Altınordu_FK"
     },
     {
       "dosya": "2425ANTAlt.png",
       "kulup": "Antalyaspor",
       "sezon": "2024/25",
       "forma_turu": "Alternatif",
-      "oyuncu_foto": null
+      "oyuncu_foto": null,
+      "sezon_link": "https://tr.wikipedia.org/wiki/Antalyaspor_2024-25_sezonu"
     },
     {
       "dosya": "1617DOREv.png",
       "kulup": "Borussia Dortmund",
       "sezon": "2016/17",
       "forma_turu": "Ev",
-      "oyuncu_foto": null
+      "oyuncu_foto": null,
+      "sezon_link": "https://en.wikipedia.org/wiki/2016–17_Borussia_Dortmund_season"
     },
     {
       "dosya": "100FB.png",
       "kulup": "Fenerbahçe",
-      "sezon": "100. Yıl",
-      "forma_turu": "Özel",
-      "oyuncu_foto": "100FBDzeko.png"
+      "sezon": "2023/24",
+      "forma_turu": "Alternatif",
+      "oyuncu_foto": "100FBDzeko.png",
+      "sezon_link": "https://tr.wikipedia.org/wiki/Fenerbahçe_(futbol_takımı)_2023-24_sezonu"
     },
     {
       "dosya": "0405FBAlt.png",
       "kulup": "Fenerbahçe",
       "sezon": "2004/05",
       "forma_turu": "Alternatif",
-      "oyuncu_foto": null
+      "oyuncu_foto": null,
+      "sezon_link": "https://tr.wikipedia.org/wiki/Fenerbahçe_(futbol_takımı)_2004-05_sezonu"
     },
     {
       "dosya": "0607FBEv.png",
       "kulup": "Fenerbahçe",
       "sezon": "2006/07",
       "forma_turu": "Ev",
-      "oyuncu_foto": null
+      "oyuncu_foto": null,
+      "sezon_link": "https://tr.wikipedia.org/wiki/Fenerbahçe_(futbol_takımı)_2006-07_sezonu"
     },
     {
       "dosya": "0809FBAlt.png",
       "kulup": "Fenerbahçe",
       "sezon": "2008/09",
       "forma_turu": "Alternatif",
-      "oyuncu_foto": null
+      "oyuncu_foto": null,
+      "sezon_link": "https://tr.wikipedia.org/wiki/Fenerbahçe_(futbol_takımı)_2008-09_sezonu"
     },
     {
       "dosya": "1213FBEv.png",
       "kulup": "Fenerbahçe",
       "sezon": "2012/13",
       "forma_turu": "Ev",
-      "oyuncu_foto": null
+      "oyuncu_foto": null,
+      "sezon_link": "https://tr.wikipedia.org/wiki/Fenerbahçe_(futbol_takımı)_2012-13_sezonu"
     },
     {
       "dosya": "2016FBTribün.png",
       "kulup": "Fenerbahçe",
       "sezon": "2016",
       "forma_turu": "Tribün",
-      "oyuncu_foto": null
+      "oyuncu_foto": null,
+      "sezon_link": "https://tr.wikipedia.org/wiki/Fenerbahçe_(futbol_takımı)_2016-17_sezonu"
     },
     {
       "dosya": "2223FBDep.png",
       "kulup": "Fenerbahçe",
       "sezon": "2022/23",
       "forma_turu": "Deplasman",
-      "oyuncu_foto": null
+      "oyuncu_foto": null,
+      "sezon_link": "https://tr.wikipedia.org/wiki/Fenerbahçe_(futbol_takımı)_2022-23_sezonu"
     },
     {
       "dosya": "1998FRAEv.png",
       "kulup": "Fransa",
       "sezon": "1998",
       "forma_turu": "Ev",
-      "oyuncu_foto": null
+      "oyuncu_foto": null,
+      "sezon_link": "https://en.wikipedia.org/wiki/1998_FIFA_World_Cup"
     },
     {
       "dosya": "1718GÖZEv.png",
       "kulup": "Göztepe",
       "sezon": "2017/18",
       "forma_turu": "Ev",
-      "oyuncu_foto": null
+      "oyuncu_foto": null,
+      "sezon_link": "https://tr.wikipedia.org/wiki/Göztepe_2017-18_sezonu"
     },
     {
       "dosya": "2019GÖZTribün.png",
       "kulup": "Göztepe",
       "sezon": "2019",
       "forma_turu": "Tribün",
-      "oyuncu_foto": null
+      "oyuncu_foto": null,
+      "sezon_link": "https://www.youtube.com/watch?v=eNpMwosGb3c"
     },
     {
       "dosya": "2425INTAlt.png",
       "kulup": "Inter",
       "sezon": "2024/25",
       "forma_turu": "Alternatif",
-      "oyuncu_foto": null
+      "oyuncu_foto": null,
+      "sezon_link": "https://en.wikipedia.org/wiki/2024–25_Inter_Milan_season"
     },
     {
       "dosya": "8687NAPHome.png",
       "kulup": "Napoli",
       "sezon": "1986/87",
       "forma_turu": "Ev",
-      "oyuncu_foto": null
+      "oyuncu_foto": null,
+      "sezon_link": "https://en.wikipedia.org/wiki/1986–87_SSC_Napoli_season"
     },
     {
       "dosya": "2324RHEv.png",
       "kulup": "Rumeli Hisarı",
       "sezon": "2023/24",
       "forma_turu": "Ev",
-      "oyuncu_foto": null
+      "oyuncu_foto": null,
+      "sezon_link": "https://www.youtube.com/watch?v=tZrR1B_Uzx8"
     },
     {
       "dosya": "2020TURDep.png",
       "kulup": "Türkiye",
       "sezon": "2020",
       "forma_turu": "Deplasman",
-      "oyuncu_foto": null
+      "oyuncu_foto": null,
+      "sezon_link": "https://tr.wikipedia.org/wiki/2020_Avrupa_Futbol_Şampiyonası"
     }
 ]

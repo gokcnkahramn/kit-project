@@ -6,27 +6,34 @@
     <title>Forma Detay</title>
     <link rel="stylesheet" href="../../style.css">
     <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
         .detay-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
             color: white;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
         }
         .forma-bilgi {
-            display: flex;
+            display: grid;
+            grid-template-columns: minmax(300px, 1fr) minmax(600px, 2fr);
             gap: 40px;
-            margin-top: 40px;
-        }
-        .forma-gorsel {
+            margin-top: 20px;
             flex: 1;
-            text-align: center;
-        }
-        .forma-gorsel img {
-            max-width: 100%;
-            height: auto;
-        }
-        .sezon-bilgi {
-            flex: 1;
+            min-height: 0;
+            height: calc(100vh - 100px);
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .geri-don {
             display: inline-block;
@@ -35,24 +42,98 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            margin-bottom: 20px;
         }
         .geri-don:hover {
             background: rgba(255,255,255,0.3);
         }
-        h1, h2 {
-            margin-bottom: 20px;
+        h2 {
+            font-size: 1.5em;
+            color: #4a9eff;
+            padding: 15px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px 10px 0 0;
+            margin: 0;
         }
-        .oyuncu-foto {
-            margin-top: 40px;
-            text-align: center;
+        .oyuncu-bolum, .sezon-link {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 400px;
+            overflow: hidden;
         }
-        .oyuncu-foto img {
-            max-width: 300px;
-            height: auto;
+        .oyuncu-container {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
-        .puan-durumu {
-            margin-top: 40px;
+        .oyuncu-container img {
+            max-width: 100%;
+            max-height: calc(100vh - 200px);
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .sezon-link-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+        .sezon-link a {
+            color: #4a9eff;
+            text-decoration: none;
+            display: block;
+            padding: 15px 20px;
+            background: rgba(255,255,255,0.1);
+            transition: background 0.3s ease;
+        }
+        .sezon-link a:hover {
+            background: rgba(255,255,255,0.15);
+        }
+        .sezon-preview {
+            flex: 1;
+            width: 100%;
+            border: none;
+            background: white;
+            min-height: 0;
+        }
+        .youtube-container {
+            flex: 1;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            padding-top: 75%; /* 4:3 aspect ratio */
+            background: black;
+            margin: 0;
+        }
+        .youtube-container iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            border: none;
+        }
+        @media (max-width: 1200px) {
+            .forma-bilgi {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                height: auto;
+                padding: 0 20px;
+            }
+            .oyuncu-bolum, .sezon-link {
+                height: 500px;
+                min-height: auto;
+            }
+            .youtube-container {
+                padding-top: 56.25%; /* 16:9 for mobile */
+            }
         }
     </style>
 </head>
@@ -61,25 +142,17 @@
         <a href="../../index.html" class="geri-don">← Koleksiyona Dön</a>
         
         <div class="forma-bilgi">
-            <div class="forma-gorsel">
-                <img src="" alt="" id="forma-img">
-                <h1 id="kulup-adi"></h1>
-                <p id="sezon"></p>
-                <p id="forma-turu"></p>
+            <div class="oyuncu-bolum">
+                <h2>Formayı Giyen Oyuncu</h2>
+                <div id="oyuncu-container" class="oyuncu-container">
+                    <!-- Oyuncu fotoğrafı buraya gelecek -->
+                </div>
             </div>
             
-            <div class="sezon-bilgi">
+            <div class="sezon-link">
                 <h2>Sezon Bilgileri</h2>
-                <div id="puan-durumu" class="puan-durumu">
-                    <!-- Puan durumu buraya gelecek -->
-                    <p>Puan durumu yakında eklenecek...</p>
-                </div>
-                
-                <div class="oyuncu-foto">
-                    <h2>Formayı Giyen Oyuncu</h2>
-                    <div id="oyuncu-container">
-                        <!-- Oyuncu fotoğrafı buraya gelecek -->
-                    </div>
+                <div id="sezon-link" class="sezon-link-content">
+                    <!-- Sezon linki buraya gelecek -->
                 </div>
             </div>
         </div>
@@ -90,6 +163,46 @@
         const urlParams = new URLSearchParams(window.location.search);
         const formaId = urlParams.get('id');
         
+        // YouTube video ID'sini URL'den çıkaran fonksiyon
+        function getYouTubeVideoId(url) {
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        }
+
+        // Sezon içeriğini oluşturan fonksiyon
+        function createSezonContent(sezonLink) {
+            if (!sezonLink) {
+                return '<p style="padding: 20px;">Bu sezon için detaylı bilgi henüz eklenmedi.</p>';
+            }
+
+            const isYouTube = sezonLink.includes('youtube.com') || sezonLink.includes('youtu.be');
+            
+            if (isYouTube) {
+                const videoId = getYouTubeVideoId(sezonLink);
+                if (videoId) {
+                    return `
+                        <a href="${sezonLink}" target="_blank">YouTube'da İzle →</a>
+                        <div class="youtube-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/${videoId}"
+                                title="YouTube video"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    `;
+                }
+            }
+
+            // YouTube değilse normal iframe kullan
+            return `
+                <a href="${sezonLink}" target="_blank">Sezon Detayları →</a>
+                <iframe class="sezon-preview" src="${sezonLink}" title="Sezon Bilgileri"></iframe>
+            `;
+        }
+        
         // Forma bilgilerini yükle
         fetch('../../formalar.json')
             .then(res => res.json())
@@ -97,26 +210,22 @@
                 const forma = formalar[formaId];
                 if (forma) {
                     document.title = `${forma.kulup} ${forma.sezon} Forması`;
-                    document.getElementById('forma-img').src = `../${forma.dosya}`;
-                    document.getElementById('forma-img').alt = `${forma.kulup} ${forma.sezon}`;
-                    document.getElementById('kulup-adi').textContent = forma.kulup;
-                    document.getElementById('sezon').textContent = forma.sezon;
-                    document.getElementById('forma-turu').textContent = forma.forma_turu;
                     
                     // Oyuncu fotoğrafını göster
                     const oyuncuContainer = document.getElementById('oyuncu-container');
-                    console.log('Forma bilgileri:', forma);
-                    console.log('Oyuncu fotoğrafı:', forma.oyuncu_foto);
                     if (forma.oyuncu_foto) {
                         const imgPath = `../../formalar/oyuncular/${forma.oyuncu_foto}`;
-                        console.log('Resim yolu:', imgPath);
                         oyuncuContainer.innerHTML = `
-                            <img src="${imgPath}" alt="Formayı Giyen Oyuncu" style="max-width: 300px; height: auto;"
+                            <img src="${imgPath}" alt="${forma.kulup} ${forma.sezon} Forması"
                                  onerror="console.error('Resim yüklenemedi:', this.src)">
                         `;
                     } else {
-                        oyuncuContainer.innerHTML = '<p>Bu forma için oyuncu fotoğrafı henüz eklenmedi.</p>';
+                        oyuncuContainer.innerHTML = '<p style="padding: 20px;">Bu forma için oyuncu fotoğrafı henüz eklenmedi.</p>';
                     }
+                    
+                    // Sezon linkini göster
+                    const sezonLinkContainer = document.getElementById('sezon-link');
+                    sezonLinkContainer.innerHTML = createSezonContent(forma.sezon_link);
                     
                     // Sayfa arka plan rengini ayarla
                     document.body.style.backgroundColor = 'rgb(30, 30, 30)';
