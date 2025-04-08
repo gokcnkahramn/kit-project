@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forma Detay</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .detay-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: white;
+        }
+        .forma-bilgi {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .forma-gorsel {
+            flex: 1;
+            text-align: center;
+        }
+        .forma-gorsel img {
+            max-width: 100%;
+            height: auto;
+        }
+        .sezon-bilgi {
+            flex: 1;
+        }
+        .geri-don {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .geri-don:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+        .oyuncu-foto {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .oyuncu-foto img {
+            max-width: 300px;
+            height: auto;
+        }
+        .puan-durumu {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="detay-container">
+        <a href="../../index.html" class="geri-don">← Koleksiyona Dön</a>
+        
+        <div class="forma-bilgi">
+            <div class="forma-gorsel">
+                <img src="" alt="" id="forma-img">
+                <h1 id="kulup-adi"></h1>
+                <p id="sezon"></p>
+                <p id="forma-turu"></p>
+            </div>
+            
+            <div class="sezon-bilgi">
+                <h2>Sezon Bilgileri</h2>
+                <div id="puan-durumu" class="puan-durumu">
+                    <!-- Puan durumu buraya gelecek -->
+                    <p>Puan durumu yakında eklenecek...</p>
+                </div>
+                
+                <div class="oyuncu-foto">
+                    <h2>Formayı Giyen Oyuncu</h2>
+                    <div id="oyuncu-container">
+                        <!-- Oyuncu fotoğrafı buraya gelecek -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // URL'den forma bilgilerini al
+        const urlParams = new URLSearchParams(window.location.search);
+        const formaId = urlParams.get('id');
+        
+        // Forma bilgilerini yükle
+        fetch('../../formalar.json')
+            .then(res => res.json())
+            .then(formalar => {
+                const forma = formalar[formaId];
+                if (forma) {
+                    document.title = `${forma.kulup} ${forma.sezon} Forması`;
+                    document.getElementById('forma-img').src = `../${forma.dosya}`;
+                    document.getElementById('forma-img').alt = `${forma.kulup} ${forma.sezon}`;
+                    document.getElementById('kulup-adi').textContent = forma.kulup;
+                    document.getElementById('sezon').textContent = forma.sezon;
+                    document.getElementById('forma-turu').textContent = forma.forma_turu;
+                    
+                    // Oyuncu fotoğrafını göster
+                    const oyuncuContainer = document.getElementById('oyuncu-container');
+                    console.log('Forma bilgileri:', forma);
+                    console.log('Oyuncu fotoğrafı:', forma.oyuncu_foto);
+                    if (forma.oyuncu_foto) {
+                        const imgPath = `../../formalar/oyuncular/${forma.oyuncu_foto}`;
+                        console.log('Resim yolu:', imgPath);
+                        oyuncuContainer.innerHTML = `
+                            <img src="${imgPath}" alt="Formayı Giyen Oyuncu" style="max-width: 300px; height: auto;"
+                                 onerror="console.error('Resim yüklenemedi:', this.src)">
+                        `;
+                    } else {
+                        oyuncuContainer.innerHTML = '<p>Bu forma için oyuncu fotoğrafı henüz eklenmedi.</p>';
+                    }
+                    
+                    // Sayfa arka plan rengini ayarla
+                    document.body.style.backgroundColor = 'rgb(30, 30, 30)';
+                }
+            })
+            .catch(error => {
+                console.error('Forma bilgileri yüklenemedi:', error);
+            });
+    </script>
+</body>
+</html>

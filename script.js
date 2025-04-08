@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         slide.className = "swiper-slide";
 
         slide.innerHTML = `
-          <div class="image-container">
+          <div class="image-container" style="cursor: pointer;" onclick="window.location.href='formalar/detay/forma.html?id=${index}'">
             <img 
               src="./formalar/${forma.dosya}" 
               alt="${forma.kulup} ${forma.sezon}"
