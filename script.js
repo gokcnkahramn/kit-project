@@ -20,14 +20,25 @@ document.addEventListener('DOMContentLoaded', () => {
       // İstatistikleri göster
       const statsContainer = document.getElementById('stats');
       statsContainer.innerHTML = `
-        <p>👕 Toplam <strong>${totalKits}</strong> forma</p>
-        <p>⚽️ <strong>${uniqueClubs.size}</strong> farklı kulüp</p>
-        <p>📅 <strong>${uniqueSeasons.size}</strong> farklı sezon</p>
+        <p style="color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">👕 Toplam <strong>${totalKits}</strong> forma</p>
+        <p style="color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">⚽️ <strong>${uniqueClubs.size}</strong> farklı kulüp</p>
+        <p style="color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">📅 <strong>${uniqueSeasons.size}</strong> farklı sezon</p>
       `;
 
       const container = document.getElementById("carousel-container");
       if (!container) {
         throw new Error('Carousel container bulunamadı!');
+      }
+
+      const colorThief = new ColorThief();
+      let activeSlideColor = null;
+
+      function rgbToString(color) {
+        return `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+      }
+
+      function updateBackgroundColor(color) {
+        document.body.style.backgroundColor = color;
       }
 
       formalar.forEach((forma, index) => {
@@ -40,38 +51,68 @@ document.addEventListener('DOMContentLoaded', () => {
             <img 
               src="./formalar/${forma.dosya}" 
               alt="${forma.kulup} ${forma.sezon}"
+              crossorigin="anonymous"
               onload="console.log('Resim yüklendi:', '${forma.dosya}')"
               onerror="console.error('Resim yüklenemedi:', '${forma.dosya}'); this.src='https://via.placeholder.com/300x400?text=Forma+Bulunamadı'"
             >
           </div>
           <div class="slide-info">
-            <p class="kulup">${forma.kulup}</p>
-            <p class="sezon">${forma.sezon}</p>
-            <p class="forma-turu">${forma.forma_turu}</p>
+            <p class="kulup" style="color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">${forma.kulup}</p>
+            <p class="sezon" style="color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">${forma.sezon}</p>
+            <p class="forma-turu" style="color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">${forma.forma_turu}</p>
           </div>
         `;
+
+        const img = slide.querySelector('img');
+        img.addEventListener('load', () => {
+          try {
+            const color = colorThief.getColor(img);
+            slide.dataset.backgroundColor = rgbToString(color);
+          } catch (error) {
+            console.error('Renk alınamadı:', error);
+          }
+        });
 
         container.appendChild(slide);
       });
 
       console.log('Swiper başlatılıyor...');
+      // 100. Yıl formasının indexini bul
+      const yuzuncuYilIndex = formalar.findIndex(forma => forma.dosya === "100FB.png");
+      console.log('100. Yıl forması index:', yuzuncuYilIndex);
+
       const swiper = new Swiper(".mySwiper", {
         effect: "coverflow",
         grabCursor: true,
         centeredSlides: true,
         slidesPerView: "auto",
-        initialSlide: 2,
+        initialSlide: yuzuncuYilIndex !== -1 ? yuzuncuYilIndex : 0,
         loop: true,
         watchSlidesProgress: true,
         coverflowEffect: {
           rotate: 30,
           stretch: 0,
-          depth: 200,
-          modifier: 1.5,
-          slideShadows: true,
+          depth: 100,
+          modifier: 1,
+          slideShadows: false
         }
       });
       
+      swiper.on('slideChange', () => {
+        const activeSlide = swiper.slides[swiper.activeIndex];
+        if (activeSlide && activeSlide.dataset.backgroundColor) {
+          updateBackgroundColor(activeSlide.dataset.backgroundColor);
+        }
+      });
+
+      // İlk slaytın rengini ayarla
+      setTimeout(() => {
+        const activeSlide = swiper.slides[swiper.activeIndex];
+        if (activeSlide && activeSlide.dataset.backgroundColor) {
+          updateBackgroundColor(activeSlide.dataset.backgroundColor);
+        }
+      }, 1000);
+
       console.log('Swiper başlatıldı');
     })
     .catch(error => {
