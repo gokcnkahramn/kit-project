@@ -1,5 +1,23 @@
 [
     {
+    "dosya": "1617ALTAlt.png",
+    "kulup": "Altınordu",
+    "sezon": "2016/17",
+    "forma_turu": "Alternatif"
+    },
+    {
+      "dosya": "2425ANTAlt.png",
+      "kulup": "Antalyaspor",
+      "sezon": "2024/25",
+      "forma_turu": "Alternatif"
+    },
+    {
+      "dosya": "1617DOREv.png",
+      "kulup": "Borussia Dortmund",
+      "sezon": "2016/17",
+      "forma_turu": "Ev"
+    },
+    {
       "dosya": "100FB.png",
       "kulup": "Fenerbahçe",
       "sezon": "100. Yıl",
@@ -30,15 +48,21 @@
       "forma_turu": "Ev"
     },
     {
-      "dosya": "1617ALTAlt.png",
-      "kulup": "Altınordu",
-      "sezon": "2016/17",
-      "forma_turu": "Alternatif"
+      "dosya": "2016FBTribün.png",
+      "kulup": "Fenerbahçe",
+      "sezon": "2016",
+      "forma_turu": "Tribün"
     },
     {
-      "dosya": "1617DOREv.png",
-      "kulup": "Borussia Dortmund",
-      "sezon": "2016/17",
+      "dosya": "2223FBDep.png",
+      "kulup": "Fenerbahçe",
+      "sezon": "2022/23",
+      "forma_turu": "Deplasman"
+    },
+    {
+      "dosya": "1998FRAEv.png",
+      "kulup": "Fransa",
+      "sezon": "1998",
       "forma_turu": "Ev"
     },
     {
@@ -48,40 +72,10 @@
       "forma_turu": "Ev"
     },
     {
-      "dosya": "1998FRAEv.png",
-      "kulup": "Fransa",
-      "sezon": "1998",
-      "forma_turu": "Ev"
-    },
-    {
-      "dosya": "2016FBTribün.png",
-      "kulup": "Fenerbahçe",
-      "sezon": "2016",
-      "forma_turu": "Tribün"
-    },
-    {
       "dosya": "2019GÖZTribün.png",
       "kulup": "Göztepe",
       "sezon": "2019",
       "forma_turu": "Tribün"
-    },
-    {
-      "dosya": "2020TURDep.png",
-      "kulup": "Türkiye",
-      "sezon": "2020",
-      "forma_turu": "Deplasman"
-    },
-    {
-      "dosya": "2223FBDep.png",
-      "kulup": "Fenerbahçe",
-      "sezon": "2022/23",
-      "forma_turu": "Deplasman"
-    },
-    {
-      "dosya": "2324RHEv.png",
-      "kulup": "Rumeli Hisarı",
-      "sezon": "2023/24",
-      "forma_turu": "Ev"
     },
     {
       "dosya": "2425INTAlt.png",
@@ -90,15 +84,21 @@
       "forma_turu": "Alternatif"
     },
     {
-      "dosya": "2425ANTAlt.png",
-      "kulup": "Antalyaspor",
-      "sezon": "2024/25",
-      "forma_turu": "Alternatif"
-    },
-    {
       "dosya": "8687NAPHome.png",
       "kulup": "Napoli",
       "sezon": "1986/87",
       "forma_turu": "Ev"
+    },
+    {
+      "dosya": "2324RHEv.png",
+      "kulup": "Rumeli Hisarı",
+      "sezon": "2023/24",
+      "forma_turu": "Ev"
+    },
+    {
+      "dosya": "2020TURDep.png",
+      "kulup": "Türkiye",
+      "sezon": "2020",
+      "forma_turu": "Deplasman"
     }
 ]
