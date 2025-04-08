@@ -1,58 +1,165 @@
 body {
-    background-color: #000;
-    margin: 0;
-    font-family: sans-serif;
-  }
-  
-  .swiper {
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  
-  .swiper-slide {
-    background: transparent;
-    width: 300px;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transform: scale(0.8);
-    opacity: 0.4;
-    transition: transform 0.5s, opacity 0.5s;
-  }
-  
-  .swiper-slide-active {
-    transform: scale(1.05) !important;
-    opacity: 1 !important;
-  }
-  
-  .image-container {
-    position: relative;
-  }
-  
-  .image-container img {
-    width: 100%;
-    border-radius: 0;
-    box-shadow: none;
-    background: transparent;
-  }
-  
-  .slide-info {
-    display: none;
-    margin-top: 10px;
-  }
-  
-  .swiper-slide-active .slide-info {
-    display: block;
-  }
-  
-  .sezon {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-    margin-bottom: 5px;
-  }
-  
+  background-color: #000;
+  margin: 0;
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  color: white;
+  margin: 0 0 20px 0;
+}
+
+.stats-container {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.stats-container p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.swiper {
+  width: 100%;
+  max-width: 1600px;
+  padding: 50px 0;
+  perspective: 1200px;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  opacity: 0.2;
+  transition: all 0.5s ease;
+  visibility: hidden;
+}
+
+.swiper-slide-visible {
+  visibility: visible;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1.1) rotateY(0deg) !important;
+  visibility: visible;
+}
+
+/* Sağdaki formalar */
+.swiper-slide-next {
+  opacity: 0.8;
+  transform: rotateY(30deg) scale(0.9);
+  visibility: visible;
+}
+
+.swiper-slide-next ~ .swiper-slide-next {
+  opacity: 0.6;
+  transform: rotateY(45deg) scale(0.85);
+  visibility: visible;
+}
+
+.swiper-slide-next ~ .swiper-slide-next ~ .swiper-slide-next {
+  opacity: 0.4;
+  transform: rotateY(60deg) scale(0.8);
+  visibility: visible;
+}
+
+/* Soldaki formalar */
+.swiper-slide-prev {
+  opacity: 0.8;
+  transform: rotateY(-30deg) scale(0.9);
+  visibility: visible;
+}
+
+.swiper-slide-prev ~ .swiper-slide-prev {
+  opacity: 0.6;
+  transform: rotateY(-45deg) scale(0.85);
+  visibility: visible;
+}
+
+.swiper-slide-prev ~ .swiper-slide-prev ~ .swiper-slide-prev {
+  opacity: 0.4;
+  transform: rotateY(-60deg) scale(0.8);
+  visibility: visible;
+}
+
+.image-container {
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide:hover .image-container img {
+  transform: scale(1.05);
+}
+
+.slide-info {
+  color: white;
+  text-align: center;
+  width: 100%;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.swiper-slide-active .slide-info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.kulup {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.sezon {
+  font-size: 18px;
+  color: #ddd;
+  margin: 5px 0;
+}
+
+.forma-turu {
+  font-size: 16px;
+  color: #aaa;
+  margin: 0;
+}
+
+/* Pagination noktalarını gizle */
+.swiper-pagination {
+  display: none;
+}
+
+.swiper-pagination-bullet {
+  background: white;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
