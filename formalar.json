@@ -12,7 +12,7 @@
       "kulup": "Antalyaspor",
       "sezon": "2024/25",
       "forma_turu": "Alternatif",
-      "oyuncu_foto": "2425AntLarsson.png",
+      "oyuncu_foto": null,
       "sezon_link": "https://tr.wikipedia.org/wiki/Antalyaspor_2024-25_sezonu"
     },
     {
@@ -20,7 +20,7 @@
       "kulup": "Borussia Dortmund",
       "sezon": "2016/17",
       "forma_turu": "Ev",
-      "oyuncu_foto": "1617DORReus.jpg",
+      "oyuncu_foto": null,
       "sezon_link": "https://en.wikipedia.org/wiki/2016–17_Borussia_Dortmund_season"
     },
     {
@@ -28,7 +28,7 @@
       "kulup": "Fenerbahçe",
       "sezon": "2023/24",
       "forma_turu": "Alternatif",
-      "oyuncu_foto": "100FBDzeko.png",
+      "oyuncu_foto": null,
       "sezon_link": "https://tr.wikipedia.org/wiki/Fenerbahçe_(futbol_takımı)_2023-24_sezonu"
     },
     {
@@ -60,7 +60,7 @@
       "kulup": "Fenerbahçe",
       "sezon": "2012/13",
       "forma_turu": "Ev",
-      "oyuncu_foto": "1213FBStoch.png",
+      "oyuncu_foto": null,
       "sezon_link": "https://tr.wikipedia.org/wiki/Fenerbahçe_(futbol_takımı)_2012-13_sezonu"
     },
     {
@@ -84,7 +84,7 @@
       "kulup": "Fransa",
       "sezon": "1998",
       "forma_turu": "Ev",
-      "oyuncu_foto": "1998FRAZidane.jpeg",
+      "oyuncu_foto": null,
       "sezon_link": "https://en.wikipedia.org/wiki/1998_FIFA_World_Cup"
     },
     {
@@ -110,6 +110,14 @@
       "forma_turu": "Alternatif",
       "oyuncu_foto": null,
       "sezon_link": "https://en.wikipedia.org/wiki/2024–25_Inter_Milan_season"
+    },
+    {
+      "dosya": "2425KOLAlt.png",
+      "kulup": "Köln",
+      "sezon": "2024/25",
+      "forma_turu": "Tribün",
+      "oyuncu_foto": null,
+      "sezon_link": "https://cdn.jwplayer.com/videos/lmi1jx2e-k5rn4tgB.mp4"
     },
     {
       "dosya": "8687NAPHome.png",
