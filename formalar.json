@@ -160,6 +160,15 @@
       "sezon_link": "https://en.wikipedia.org/wiki/2024%E2%80%9325_SSC_Napoli_season"
     },
     {
+      "dosya": "2425PSVEv_front.png",            
+      "arka": "2425PSVEv_back.png",
+      "kulup": "PSV",
+      "sezon": "2025",
+      "forma_turu": "Ev",
+      "oyuncu_foto": "PSV2425Ev.jpg",
+      "sezon_link": "https://en.wikipedia.org/wiki/2024%E2%80%9325_PSV_Eindhoven_season"
+    },
+    {
       "dosya": "2425RMEv.png",
       "kulup": "Real Madrid",
       "sezon": "2024/25",
