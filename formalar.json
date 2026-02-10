@@ -72,6 +72,14 @@
       "sezon_link": "https://tr.wikipedia.org/wiki/Fenerbahçe_(futbol_takımı)_2022-23_sezonu"
     },
     {
+      "dosya": "1819FBBekoEv.png",
+      "kulup": "Fenerbahçe Beko",
+      "sezon": "2018/19",
+      "forma_turu": "Ev",
+      "oyuncu_foto": "FenerbahçeBeko1819Ev.jpg",
+      "sezon_link": "https://tr.wikipedia.org/wiki/Fenerbah%C3%A7e_(basketbol_tak%C4%B1m%C4%B1)_2018-19_sezonu"
+    },
+    {
       "dosya": "1998FRAEv.png",
       "kulup": "Fransa",
       "sezon": "1998",
@@ -160,6 +168,14 @@
       "sezon_link": "https://en.wikipedia.org/wiki/2024%E2%80%9325_SSC_Napoli_season"
     },
     {
+      "dosya": "2020SDPDep.png",            
+      "kulup": "San Diego Padres",
+      "sezon": "2020",
+      "forma_turu": "Deplasman",
+      "oyuncu_foto": "Padres2020Deplasman.jpg",
+      "sezon_link": "https://en.wikipedia.org/wiki/2020_San_Diego_Padres_season"
+    },
+    {
       "dosya": "2425PSVEv_front.png",            
       "arka": "2425PSVEv_back.png",
       "kulup": "PSV",
@@ -199,6 +215,14 @@
       "forma_turu": "Alternatif",
       "oyuncu_foto": "Sivasspor2425Alternatif.png",
       "sezon_link": "https://tr.wikipedia.org/wiki/Sivasspor_2024-25_sezonu"
+    },
+    {
+      "dosya": "1990TRATribün.png",
+      "kulup": "Tranmere Rovers",
+      "sezon": "1990/91",
+      "forma_turu": "Taraftar",
+      "oyuncu_foto": "Tranmere9091Taraftar.png",
+      "sezon_link": "https://en.wikipedia.org/wiki/1990%E2%80%9391_Tranmere_Rovers_F.C._season"
     },
     {
       "dosya": "2020TURDep.png",
