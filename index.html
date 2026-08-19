@@ -5,13 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Forma Koleksiyonum</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
 </head>
 <body>
   <h1 style="text-align: center; color: white;">Forma Koleksiyonum</h1>
 
-  <div id="stats" class="stats-container"></div>
+  <div id="top-section">
+    <div id="stats" class="stats-container"></div>
+
+    <div id="map-section">
+      <div id="map"></div>
+      <div id="map-label">Formanın stadyumu haritada gösterilecek</div>
+    </div>
+  </div>
 
   <div class="swiper mySwiper">
     <div class="swiper-wrapper" id="carousel-container"></div>
